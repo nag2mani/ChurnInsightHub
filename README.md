@@ -1,4 +1,3 @@
-```markdown
 # ChurnInsightHub
 
 ChurnInsightHub is a Django-based machine learning web application designed to predict the customer churn rate of a bank. The project utilizes various machine learning algorithms to analyze customer data and provide insights into the likelihood of customers leaving the bank.
@@ -50,6 +49,3 @@ To run the ChurnInsightHub application locally, follow these steps:
 ## Contributing
 
 Contributions to ChurnInsightHub are welcome! If you have any ideas for new features, improvements, or bug fixes, feel free to open an issue or submit a pull request.
-
-
-```
