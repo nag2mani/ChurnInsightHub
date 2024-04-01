@@ -23,19 +23,19 @@ Our customer engagement service enhances interactions with clients through perso
 
 ## Why Choose Us
 
-### Expert Management
+### 1. Expert Management
 
 Our team of seasoned experts specializes in analyzing banking data to identify patterns and trends that signal potential customer churn.
 
-### Secure Investment
+### 2. Secure Investment
 
 Protect your investments by staying ahead of customer churn trends. Our cutting-edge algorithms sift through vast amounts of banking data to detect early warning signs of customer dissatisfaction.
 
-### Data-Driven Insights
+### 3. Data-Driven Insights
 
 Data-driven insights are the cornerstone of modern business strategy, providing invaluable guidance and foresight in an increasingly data-driven world.From predicting customer churn to identifying untapped opportunities, data-driven insights drive innovation, foster growth, and pave the way for sustained success in today's dynamic marketplace.
 
-### Customer Retention Strategies
+### 4. Customer Retention Strategies
 
 Customer retention strategies are vital for businesses aiming to cultivate lasting relationships with their clientele. By analyzing customer data comprehensively, organizations can identify patterns and trends indicative of potential churn.
 
