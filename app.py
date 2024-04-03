@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for
 import plotly.graph_objects as go
 import numpy as np
 from flask_sqlalchemy import SQLAlchemy
@@ -34,12 +34,9 @@ def service():
 def team():
     return render_template('team.html')
 
-
-
-@app.route('/uploadcsv', methods=['GET', 'POST'])
-def uploadcsv():
-    return render_template('input.html')
-
+@app.route('/csvfile', methods=['GET', 'POST'])
+def csvfile():
+    return render_template('csvfile.html')
 
 
 @app.route('/input', methods=['GET', 'POST'])
@@ -86,7 +83,6 @@ def prediction():
 @app.route('/dataentry', methods=['GET', 'POST'])
 def dataentry():
     return render_template('Prediction.html')
-
 
 
 
