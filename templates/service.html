@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title> ChurnInsightHub </title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="../static/css/style.css" rel="stylesheet" />
+  <link href="../static/css/responsive.css" rel="stylesheet" />
+</head>
+
+
+<body>
+  <div class="hero_area">
+
+    <!-- Background image -->
+    <div class="hero_bg_box">
+      <div class="bg_img_box">
+        <img src="../static/images/hero-bg11.jpg" alt="">
+      </div>
+    </div>
+
+
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="">
+            <span>
+              Churn Insight Hub
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item ">
+                <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="{{ url_for('about') }}"> About</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('service') }}">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('team') }}">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> <i class="fa fa-user" aria-hidden="true"></i> Login</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+
+
+    <!-- service section -->
+    <section class="service_section layout_padding">
+      <div class="service_container">
+        <div class="container ">
+          <div class="heading_container heading_center">
+            <h2 style="margin-bottom: 30px;">
+              Our <span>Services</span>
+            </h2>
+          </div>
+          <div class="row">
+            <div class="col-md-4 ">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="../static/images/images.jpeg" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Churn Prediction
+                  </h5>
+                  <p>
+                    Our churn prediction service utilizes advanced algorithms and data analysis techniques to forecast
+                    customer churn with precision, empowering businesses to take proactive measures and retain valuable
+                    customers.With our churn prediction service, businesses can identify at-risk customers early on,
+                    enabling targeted retention strategies that minimize their customer churn and maximize customer retention rates.
+                  </p>
+                  <a href="">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 ">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="../static/images/Customer-longevity-1-1024x576.jpg" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Customer Longevity
+                  </h5>
+                  <p>
+                    Our customer longevity service focuses on nurturing long-term relationships with clients by
+                    understanding their needs, preferences, and behaviors, allowing businesses to tailor their offerings
+                    and services accordingly. By leveraging our customer longevity service, businesses can increase
+                    customer lifetime value, drive repeat purchases, and foster loyalty, leading to sustained growth and
+                    profitability.
+                  </p>
+                  <a href="">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 ">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="../static/images/enga.webp" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Customer Engagement
+                  </h5>
+                  Our customer engagement service enhances interactions with clients through personalized communication,
+                  interactive experiences, and targeted marketing campaigns, resulting in higher customer satisfaction
+                  and engagement. With our customer engagement service, businesses can create meaningful connections
+                  with their audience, drive brand loyalty, and foster advocacy, ultimately driving revenue growth and
+                  market share.
+                  </p>
+                  <a href="">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="btn-box">
+          <a href="">
+            View All
+          </a>
+        </div> -->
+        </div>
+      </div>
+    </section>
+    <!-- end service section -->
+
+
+
+
+    <!-- info section -->
+    <section class="info_section layout_padding2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4 info_col">
+            <div class="info_contact">
+              <h4>
+                Address
+              </h4>
+              <div class="contact_link_box">
+                <a href="http://maps.google.com/">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  <span>
+                    Sitare University, Lucknow
+                  </span>
+                </a>
+                <a href="">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  <span>
+                    Call +91 89697XXXXX
+                  </span>
+                </a>
+                <a href="">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <span>
+                    nag2mani@gmail.com
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="info_social">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 info_col">
+            <div class="info_detail">
+              <h4>
+                Infomtion
+              </h4>
+              <p>
+                necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin
+                words, combined with a handful
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 info_col">
+            <h4>
+              Subscribe
+            </h4>
+            <form action="#">
+              <input type="text" placeholder="Enter email" />
+              <button type="submit">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end info section -->
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
