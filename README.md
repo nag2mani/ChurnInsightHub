@@ -40,7 +40,6 @@ Data-driven insights are the cornerstone of modern business strategy, providing 
 Customer retention strategies are vital for businesses aiming to cultivate lasting relationships with their clientele. By analyzing customer data comprehensively, organizations can identify patterns and trends indicative of potential churn.
 
 
-
 ## Installation
 
 To run the ChurnInsightHub application locally, follow these steps:
@@ -63,13 +62,13 @@ To run the ChurnInsightHub application locally, follow these steps:
    pip install -r requirements.txt
    ```
 
-4. Run the Django development server:
+4. Run the Flask development server:
 
    ```
-   python manage.py runserver
+   python app.py
    ```
 
-5. Access the application in your web browser at `http://localhost:8000`.
+5. Access the application in your web browser at `http://localhost:5000`.
 
 ## Usage
 
@@ -77,6 +76,4 @@ To run the ChurnInsightHub application locally, follow these steps:
 2. Click on "Predict Churn": After inputting the data, click on the "Predict Churn" button to obtain the churn prediction.
 3. View Prediction: The application will display the churn prediction along with relevant insights and visualizations.
 
-## Contributing
 
-Contributions to ChurnInsightHub are welcome! If you have any ideas for new features, improvements, or bug fixes, feel free to open an issue or submit a pull request.
