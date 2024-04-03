@@ -77,3 +77,15 @@ To run the ChurnInsightHub application locally, follow these steps:
 3. View Prediction: The application will display the churn prediction along with relevant insights and visualizations.
 
 
+## Team
+
+1. Nagmani Kumar
+
+2. Divyansh Mishra
+
+3. Sanjay VP
+
+4. Prakash Marandi
+
+5. Saurabh Yadav
+
