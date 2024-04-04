@@ -89,6 +89,6 @@ def dataentry():
         return render_template('Prediction.html')
 
 
-
+#To run the file.
 if __name__ == '__main__':
     app.run(debug=True) 
