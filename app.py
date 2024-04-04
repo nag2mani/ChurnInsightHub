@@ -66,7 +66,7 @@ def input():
         # else:
         #     return redirect(url_for('prediction'))
 
-
+# this mesaage is added
 @app.route('/analysis', methods=['GET', 'POST'])
 def analysis():
     if request.method=="POST":
