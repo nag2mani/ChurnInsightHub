@@ -111,7 +111,7 @@ a:focus {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  overflow: hidden;
+  overflow-x: hidden;
   z-index: -1;
 }
 
@@ -619,7 +619,7 @@ a:focus {
 .team_section .team_container .box {
   padding: 35px 0 0 0;
   border-radius: 5px;
-  overflow: hidden;
+  overflow-x: hidden;
   -webkit-transition: all .1s;
   transition: all .1s;
   margin-top: 45px;
