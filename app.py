@@ -1,38 +1,22 @@
 from flask import Flask, render_template, request, redirect, url_for
-import plotly.graph_objects as go
+import joblib
 import numpy as np
-# from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
-
 
 app = Flask(__name__) 
-# app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
-# app.config['SQLALCHEMY_TRACK _MODIFICATIONS'] = False
-# db = SQLAlchemy (app)
 
+# Loading all the saved models.
+dt_model = joblib.load('models/nate_decision_tree.sav')
+knn_model = joblib.load('models/nate_knn.sav')
+lr_model = joblib.load('models/nate_logistic_regression.sav')
+rf_model = joblib.load('models/nate_random_forest.sav')
+svm_model = joblib.load('models/SVM_model.sav')
+xgb_model = joblib.load('models/XGBoost_model.sav')
 
-# class Database(db.Model):
-#     sno = db.Column(db.Integer, primary_key=True)
-#     title = db.Column(db.String(200), nullable=False)
-#     desc = db.Column(db.String(500), nullable=False)
-#     date_created = db.Column(db.DateTime, default=datetime.utcnow)
-def plot(csvfile):
-        np.random.seed(42)
-        x = np.random.normal(loc=0, scale=1, size=100)
-        y = np.random.normal(loc=0, scale=1, size=100)
-        # Create a scatter plot figure using Plotly
-        fig = go.Figure()
-        # Add a scatter trace to the figure
-        fig.add_trace(go.Scatter(x=x, y=y, mode='markers'))
-        # Update layout and axis labels
-        fig.update_layout(
-            title='Scatter Plot',
-            xaxis_title='X',
-            yaxis_title='Y'
-        )
-        # Convert the plot to JSON
-        plot_html=fig.to_html(full_html=False)
-        return plot_html
+loaded_models = {'dt': dt_model,'knn': knn_model,'lr': lr_model,'rf': rf_model,'svm': svm_model,'xgb': xgb_model}
+
+def decode(pred):
+    if pred == 1: return 'Customer Exits'
+    else: return 'Customer Stays'
 
 @app.route('/')
 def index():
@@ -50,46 +34,79 @@ def service():
 def team():
     return render_template('team.html')
 
-@app.route('/csvfile', methods=['GET', 'POST'])
-def csvfile():
-    return render_template('csvfile.html')
+
+@app.route('/userinput', methods=['GET', 'POST'])
+def userinput():
+    # Initial rendering.
+    result = [{'model':'Decision Tree', 'prediction':' '},
+              {'model': 'K-nearest Neighbors', 'prediction': ' '},
+              {'model': 'Logistic Regression', 'prediction': ' '},
+              {'model': 'Random Forest', 'prediction': ' '},
+              {'model': 'SVM', 'prediction': ' '},
+              {'model': 'XGBoost', 'prediction': ' '}]
+    
+    # Created main dictionary.
+    maind = {}
+    maind['customer'] = {}
+    maind['predictions'] = result
+
+    return render_template('userinput.html', maind=maind)
 
 
-@app.route('/input', methods=['GET', 'POST'])
-def input():
-    csvfile=None
-    if request.method=="POST":
-        csvfile=request.form["csvfile"]
-        return render_template("csvfile.html",csvfile=csvfile)
-        # if 'csvfile' in request.form:
-        #     return redirect(url_for('analysis',csvfile=csvfile))
-        # else:
-        #     return redirect(url_for('prediction'))
+@app.route('/predict', methods=['POST'])
+def predict():
+    # List values received from index
+    values = [x for x in request.form.values()]
 
-# this mesaage is added
-@app.route('/analysis', methods=['GET', 'POST'])
-def analysis():
-    if request.method=="POST":
-        csvfile = request.args.get('csvfile')
-        plot_html=plot(csvfile)
-    return render_template('Analysis.html',plot_html=plot_html)
+    # new_array:input to models
+    new_array = np.array(values).reshape(1, -1)
+    print(new_array)
+    print(values)
+
+    # Key names for customer dictionary custd
+    cols = ['CreditScore',
+            'Geography',
+            'Gender',
+            'Age',
+            'Tenure',
+            'Balance',
+            'NumOfProducts',
+            'HasCrCard',
+            'IsActiveMember',
+            'EstimatedSalary']
+
+    # Create customer dictionary
+    custd = {}
+    for k, v in  zip(cols, values):
+        custd[k] = v
+
+    # Convert 1 or 0 to Yes or No    
+    yn_val = ['HasCrCard', 'IsActiveMember']
+    for val in  yn_val:
+        if custd[val] == '1': custd[val] = 'Yes'
+        else: custd[val] = 'No'
+
+    # Loop through 'loaded_models' dictionary and saved predictiond to the list.
+    predl = []
+    for m in loaded_models.values():
+        predl.append(decode(m.predict(new_array)[0]))
+
+    result = [
+            {'model':'Decision Tree', 'prediction':predl[0]},
+            {'model': 'K-nearest Neighbors', 'prediction': predl[1]},
+            {'model': 'Logistic Regression', 'prediction': predl[2]},
+            {'model': 'Random Forest', 'prediction': predl[3]},
+            {'model': 'SVM', 'prediction': predl[4]},
+            {'model': 'XGBoost', 'prediction': predl[5]}
+            ]
+
+    # Create main dictionary
+    maind = {}
+    maind['customer'] = custd
+    maind['predictions'] = result
+
+    return render_template('userinput.html', maind=maind)
 
 
-
-@app.route('/prediction', methods=['GET', 'POST'])
-def prediction():
-    if request.method=="POST":
-        return render_template('Prediction.html')
-
-
-
-@app.route('/dataentry', methods=['GET', 'POST'])
-def dataentry():
-    if request.method=="POST":
-        return render_template('Prediction.html')
-
-
-
-#To run the file.
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(debug=True)
