@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for
-import joblib
+from flask import Flask, render_template, request
 import numpy as np
+import joblib
 
 app = Flask(__name__) 
 
@@ -46,7 +46,6 @@ def userinput():
     maind = {}
     maind['customer'] = {}
     maind['predictions'] = result
-
     return render_template('userinput.html', maind = maind)
 
 
@@ -99,7 +98,6 @@ def predict():
     maind = {}
     maind['customer'] = custd
     maind['predictions'] = result
-
     return render_template('userinput.html', maind=maind)
 
 
